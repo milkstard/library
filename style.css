@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+table{
+    background-color: rgb(196, 31, 31);
+}
