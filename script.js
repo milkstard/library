@@ -1,5 +1,5 @@
 let myLibrary = [{name: "O", author: "Jay"},{name: "D", author: "Mark"}];
-const gridContainer = document.querySelector('.grid-container');
+const gridContainer = document.querySelector('.main-content');
 const book = document.querySelector('#book');
 const author = document.querySelector('#author');
 

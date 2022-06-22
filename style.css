@@ -6,8 +6,40 @@
 }
 
 .grid-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 100px;
     border: 1px solid black;
     padding: 5px;
+}
+
+.grid-container > .header-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border: 1px solid green;
+    padding: 20px;
+}
+
+.header-content > #header-2{
+    justify-self: center;
+    align-self: center;
+}
+
+.header-content > #header-3{
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.header-content > #header-1{
+    border: 1px solid rgb(243, 242, 242);
+    box-shadow: 1px 1px 9px 5px black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.grid-container > .main-content{
+    border: 1px solid red;
 }
 
 table{
