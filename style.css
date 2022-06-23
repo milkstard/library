@@ -39,9 +39,23 @@
 }
 
 .grid-container > .main-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    padding: 10px;
     border: 1px solid red;
+}
+
+.main-content > .card{
+    padding: 10px;
+    height: 180px;
+    background-color: gray;
 }
 
 table{
     background-color: rgb(196, 31, 31);
+}
+
+tr, td{
+    padding: 10px;
 }
