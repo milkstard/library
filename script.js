@@ -2,7 +2,12 @@ let myLibrary = [{book: "O", author: "Jay"},{book: "D", author: "Mark"}];
 const gridContainer = document.querySelector('.main-content');
 const book = document.querySelector('#book');
 const author = document.querySelector('#author');
+const button = document.querySelector('#btn');
+const modalContainer = document.querySelector('.modal-container')
 
+button.addEventListener('click', element => {
+    modalContainer.style.display = "block";
+})
 function Book(){
 
 }
