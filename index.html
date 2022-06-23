@@ -16,9 +16,37 @@
             <div id="header-3"><button id="btn">+ Add Books</button></div>
         </div>
         <div class="modal-container">
-            <div id="modal-content">
-                <p>Successful</p>
-                <p><span class="close">&times;</span></p>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p>Successful</p>
+                    <p><span class="close">&times;</span></p>
+                </div>
+                <div class="modal-main">
+                    <form action="">
+                        <div>
+                            <label for="book">Book</label>
+                            <input type="text" name="book" id="book">
+                        </div>
+                        <div>
+                            <label for="author">Author</label>
+                            <input type="text" name="author" id="author">
+                        </div>
+                        <div>
+                            <label for="pages">Pages</label>
+                            <input type="number" name="pages" id="pages">
+                        </div>
+                        <div>
+                            <p>Have you yet to Read?</p>
+                            <label for="yes">Yes</label>
+                            <input type="radio" id="yes" name="yesOrNo" value="Yes">
+                            <label for="no">No</label>
+                            <input type="radio" id="no" name="yesOrNo" value="No">
+                        </div>
+                        <div>
+                            <input type="submit" value="ADD">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="main-content"></div>

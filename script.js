@@ -5,9 +5,16 @@ const author = document.querySelector('#author');
 const button = document.querySelector('#btn');
 const modalContainer = document.querySelector('.modal-container')
 
+//opens modal to add book
 button.addEventListener('click', element => {
     modalContainer.style.display = "block";
 })
+
+//closes modal if clicked
+modalContainer.addEventListener('click', element => {
+    modalContainer.style.display = "none";
+})
+
 function Book(){
 
 }
