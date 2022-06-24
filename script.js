@@ -1,26 +1,24 @@
 let myLibrary = [{book: "O", author: "Jay"},{book: "D", author: "Mark"}];
+let inputAuthor = document.querySelector("#author").value;
 const gridContainer = document.querySelector('.main-content');
-const book = document.querySelector('#book');
-const author = document.querySelector('#author');
 const button = document.querySelector('#btn');
+const form = document.querySelector('.form')
+const buttonSubmit = document.querySelector('input[type="submit');
 const modalContainer = document.querySelector('.modal-container')
 
-//opens modal to add book
-button.addEventListener('click', element => {
-    modalContainer.style.display = "block";
-})
 
-//closes modal if clicked
-modalContainer.addEventListener('click', element => {
-    modalContainer.style.display = "none";
-})
+function getDataForm(e){
+    e.preventDefault();
+    var formData = new FormData(form);
+    addBookToLibrary(formData.get('book'),formData.get('author'),formData.get('pages'),form[3].checked ? true:false);
+}
 
 function Book(){
 
 }
 
-function addBookToLibrary(){
-
+function addBookToLibrary(book, author, pages, read){
+    alert(book + author + pages + read);
 }
 
 //generate tr and td
@@ -38,11 +36,30 @@ function showBooks(){
     myLibrary.forEach(element => {
         let table = document.createElement('table');
         let card = document.createElement('div');
+        let tempBtn = document.createElement('button');
+        tempBtn.textContent = "REMOVE";
         card.classList.add('card');
         gridContainer.appendChild(card);
         card.appendChild(table);
         generateTable(table,element)
+        //add a last button to remove a book from library
+        let cellTemp = table.insertRow().insertCell();
+        cellTemp.appendChild(tempBtn);
     });
 }
+//to get input data
+document.addEventListener('DOMContentLoaded', function(){
+    buttonSubmit.addEventListener('click', getDataForm, false);
+}, false);
 
-showBooks();
+//opens modal to add book
+button.addEventListener('click', element => {
+    modalContainer.style.display = "block";
+})
+
+//closes modal if clicked
+modalContainer.addEventListener('click', element => {
+    if(element.target.classList.value === "modal-container"){
+        modalContainer.style.display = "none";
+    }
+})
