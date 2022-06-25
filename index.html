@@ -13,37 +13,37 @@
         <div class="header-content">
             <div id="header-1"><img src="./logo/library-svgrepo-com.svg" alt="logo"></div>
             <div id="header-2">My-Library</div>
-            <div id="header-3"><button id="btn">+ Add Books</button></div>
+            <div id="header-3"><button id="btn">+</button></div>
         </div>
         <div class="modal-container">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p>Successful</p>
-                    <p><span class="close">&times;</span></p>
+                    <p id="success">Successful</p>
+                    <p id="close"><span class="close">&times;</span></p>
                 </div>
                 <div class="modal-main">
                     <form class="form">
-                        <div>
+                        <div class="toGrid">
                             <label for="book">Book</label>
-                            <input type="text" name="book" id="book">
+                            <input type="text" name="book" id="book" required>
                         </div>
-                        <div>
+                        <div class="toGrid">
                             <label for="author">Author</label>
-                            <input type="text" name="author" id="author">
+                            <input type="text" name="author" id="author" required>
                         </div>
-                        <div>
+                        <div class="toGrid">
                             <label for="pages">Pages</label>
-                            <input type="number" name="pages" id="pages">
+                            <input type="number" name="pages" id="pages" required>
                         </div>
                         <div>
-                            <p>Have you yet to Read?</p>
+                            <p>READ STATUS:</p>
                             <label for="yes">Yes</label>
-                            <input type="radio" id="yes" name="yesOrNo" value="Yes">
+                            <input type="radio" id="yes" name="yesOrNo" value="Yes" required="required">
                             <label for="no">No</label>
-                            <input type="radio" id="no" name="yesOrNo" value="No">
+                            <input type="radio" id="no" name="yesOrNo" value="No" >
                         </div>
-                        <div>
-                            <input type="submit" value="ADD">
+                        <div class="toGrid">
+                            <input type="submit" value="ADD" id="submitBtn">
                         </div>
                     </form>
                 </div>
