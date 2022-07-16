@@ -6,6 +6,48 @@ const form = document.querySelector('.form')
 const buttonSubmit = document.querySelector('input[type="submit');
 const modalContainer = document.querySelector('.modal-container');
 const xModal = document.querySelector('.close');
+
+class Book{
+    constructor(book, author, pages, read){
+        this.book = book;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    /*
+    get book(){
+        return this._book;
+    }
+
+    get author(){
+        return this._author;
+    }
+
+    get pages(){
+        return this._pages;
+    }
+
+    get read(){
+        return this._read;
+    }
+
+    set book(x){
+       this._book = x;
+    }
+
+    set author(x){
+        this._author = x;
+    }
+    
+    set pages(x){
+        this._pages = x;
+    }
+
+    set read(x){
+        this._read = x;
+    }*/
+}
+
 function getDataForm(e){
     //e.preventDefault();
     if(form.checkValidity()){
@@ -15,7 +57,7 @@ function getDataForm(e){
 }
 
 //check if there are child nodes
-function mainContentChild(){
+function mainContentChildDelete(){
     let mainContent = document.querySelector('.main-content');
     if(mainContent.hasChildNodes()){
         while(mainContent.firstChild){
@@ -24,23 +66,18 @@ function mainContentChild(){
     }
 }
 
-function Book(book, author, pages, read){
+/*function Book(book, author, pages, read){
     this.book = book;
     this.author = author; 
     this.pages = pages;
     this.read = read;
-}
+}*/
 
 function addBookToLibrary(book, author, pages, read){
     const bookList = new Book(book, author, pages, read);
+    console.log(bookList);
     myLibrary.push(bookList);
-    mainContentChild();
-    // let mainContent = document.querySelector('.main-content');
-    // if(mainContent.hasChildNodes()){
-    //     while(mainContent.firstChild){
-    //         mainContent.removeChild(mainContent.firstChild)
-    //     }
-    // }
+    mainContentChildDelete();
     showBooks();
     clearInput();
     modalContainer.style.display = "none";
@@ -98,7 +135,7 @@ function generateTable(tableG, dataG,index){
 
 //create table to show books
 function showBooks(){
-    mainContentChild();
+    mainContentChildDelete();
     myLibrary.forEach((element,index) => {
         let table = document.createElement('table');
         let card = document.createElement('div');
